@@ -10,40 +10,11 @@
             <div v-if="load_anim" class="loading">
                 <img src="~@/assets/loading.svg">
             </div>
-            <h2>{{ info.name }},
-                <span v-for="(key, d) in country" :key="d">
-                    <span v-if="d == info_sys.country.toLowerCase()"> {{ key }} </span>
-                </span>
-                <img :src="'https://flagcdn.com/'+info_sys.country.toLowerCase()+'.svg'"
-                    :style="'height: 24px; margin-left: 5px'">
-            </h2>
-            <div class="clouds_info">
-                <h3>Saat ini</h3>
-                <div class="clouds">
-                    <div v-for="i in info_weather.slice(0, 1)" :key="i.id">
-                        <img src="~@/assets/panas.png" v-if="i.main == 'Clear'">
-                        <img src="~@/assets/panas_berawan.png" v-if="i.main == 'Clouds'">
-                        <img src="~@/assets/hujan_badai.png" v-if="i.main == 'Thunderstorm'">
-                        <img src="~@/assets/hujan_ringan.png" v-if="i.main == 'Drizzle'">
-                        <img src="~@/assets/hujan.png" v-if="i.main == 'Rain'">
-                        <img src="~@/assets/salju.png" v-if="i.main == 'Snow'">
-                        <img src="~@/assets/haze.png" v-if="i.main == 'Haze'">
-                        <img src="~@/assets/haze.png" v-if="i.main == 'Fog'">
-                        <img src="~@/assets/haze.png" v-if="i.main == 'Mist'">
-                        <img src="~@/assets/haze.png" v-if="i.main == 'Smoke'">
-                        <img src="~@/assets/haze.png" v-if="i.main == 'Dust'">
-                        <img src="~@/assets/haze.png" v-if="i.main == 'Ash'">
-                        <img src="~@/assets/haze.png" v-if="i.main == 'Squall'">
-                        <img src="~@/assets/haze.png" v-if="i.main == 'Tornado'">
-                    </div>
-                </div>
-                <div class="desc" v-for="i in info_weather" :key="i.id">
-                    {{ capitalize(i.description) }}
-                </div>
-                <div class="temp">
-                    {{ toInt(toCelcius(info_main.temp)) }}&deg; C
-                </div>
-            </div>
+            <!-- Mengambil data kota awal user -->
+            <get-my-city :city_name="info.name" :info_country="info_sys.country.toLowerCase()" :country="country"></get-my-city>
+            <!-- Mengambil data cuaca -->
+            <get-weather-now :weather="info_weather" :temp="info_main.temp"></get-weather-now>
+        
             <div class="forecast">
                 Prediksi Cuaca Rata-Rata Per Hari<br>
                 <div class="swiper-container">
@@ -95,11 +66,16 @@
 
     SwiperCore.use([Pagination]);
 
+    import getMyCity from "./getMyCity.vue"; /*DataKotaUser*/
+    import getWeatherNow from "./getWeatherNow.vue"; /*DataCuaca*/
+
     export default {
         name: 'Weather',
         components: {
             Swiper,
             SwiperSlide,
+            getMyCity,
+            getWeatherNow,
         },
         data() {
             return {
