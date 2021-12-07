@@ -46,6 +46,12 @@
                 </div>
             </div>
         </div>
+        <div v-if="not_found" class="not-found-overlay">
+                <div class="not-found">
+                    Kota yang kamu cari tidak tersedia
+                    <button class="btnClose ripple" @click="notFoundClose()">OK</button>
+                </div>
+        </div>
         <div class="footer " id="footer ">
             Powered By @wldan.rzky_ | www.wildanrizky.tech
         </div>
@@ -182,6 +188,9 @@
                 this.getWeather(this.searchCity)
                 this.getForecast(this.searchCity)
             },
+            notFoundClose() {
+                this.not_found = false;
+            }
         },
         mounted() {
             axios
