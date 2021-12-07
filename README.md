@@ -1,24 +1,26 @@
-# weatherapp3
+# MyWeatherApp
+Simple Weather & Forecast App City ⛅<br>
+<br>
+**Language 🧪**
+>* HTML
+>* JavaScript
+>* CSS
 
-## Project setup
-```
-npm install
-```
+**Framework 🔧**
+>* <a href="https://vuejs.org/">Vue 3</a>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+**Library 📖**
+>* <a href="https://axios-http.com/">Axios</a> ```API Lib```
+>* <a href="https://ionic.io/ionicons">Ionicons</a> ```Icons```
+>* <a href="https://swiperjs.com/">Swiper</a> ```Swiper Lib```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+**API By 📌**
+>* <a href="https://openweathermap.org/">Open Weather Map</a> ```Weather & Forecast Data API```
+>* <a href="https://www.ipify.org/">IP Ify</a> ```For Get IP API```
+>* <a href="https://ipapi.co/">ipapi</a> ```IP Location API```
 
-### Lints and fixes files
-```
-npm run lint
-```
+**Live Demo 🏷**
+<br>
+<a href="http://bit.ly/WldnWeatherApp">**Click Me!**</a>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
