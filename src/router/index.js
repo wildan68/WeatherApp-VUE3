@@ -4,7 +4,6 @@ import Weather from '../components/weather.vue'
 import Test from '../components/test.vue'
 import NotFound from '../components/404.vue'
 
-var x = 'test'
 
 const routes = [{
         path: process.cwd(),
@@ -12,12 +11,12 @@ const routes = [{
     },
 
     {
-        path: '/' + x,
+        path: process.cwd() + '/test',
         component: Test
     },
 
     {
-        path: '/:catchAll(.*)',
+        path: process.cwd() + '/:catchAll(.*)',
         component: NotFound
     }
 ]
