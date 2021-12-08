@@ -5,13 +5,14 @@ import Test from '../components/test.vue'
 import NotFound from '../components/404.vue'
 
 
+
 const routes = [{
-        path: process.cwd(),
+        path: '',
         component: Weather
     },
 
     {
-        path: process.cwd() + '/test',
+        path: '/test',
         component: Test
     },
 
