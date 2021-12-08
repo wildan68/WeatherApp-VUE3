@@ -12,7 +12,8 @@
     "core-js": "^3.6.5",
     "swiper": "^6.8.4",
     "vue": "^3.0.0",
-    "vue-ionicons": "^3.0.5"
+    "vue-ionicons": "^3.0.5",
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

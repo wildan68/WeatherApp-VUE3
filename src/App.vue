@@ -1,14 +1,10 @@
 <template>
-    <Weather/>
+    <router-view></router-view>
 </template>
 
 <script>
-import Weather from './components/weather.vue'
 
 export default {
   name: 'App',
-  components: {
-    Weather
-  }
 }
 </script>
