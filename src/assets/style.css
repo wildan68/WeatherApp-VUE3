@@ -195,26 +195,23 @@ button {
 }
 
 .forecast .swiper-container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
+    position: relative;
+    margin-top: 2%;
 }
 
 .forecast .swiper {
     display: flex;
-    width: 100%;
     margin-top: 5%;
 }
 
 .forecast .swiper-slide {
     display: flex;
     position: relative;
-    list-style: none;
     height: 15em;
-    width: 7em;
     background-color: #f9f9f92d;
     border-radius: 14px;
     padding: 1em;
+    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
     font-size: 14px;
@@ -305,15 +302,11 @@ button {
         font-size: 12px;
         position: relative;
     }
-    .forecast .swiper>.swiper-slide {
-        margin-bottom: 2%;
-    }
     .forecast {
         margin-top: 1em;
     }
     .forecast .swiper-slide {
-        width: 20%;
-        height: 10em;
+        height: 12em;
     }
     .forecast p {
         font-size: 10px;

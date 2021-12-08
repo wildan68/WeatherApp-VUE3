@@ -18,8 +18,8 @@
             <div class="forecast">
                 Prediksi Cuaca Rata-Rata Per Hari<br>
                 <div class="swiper-container">
-                <swiper :slidesPerView="forecastMobile()" :spaceBetween="10" class="swiper mySwiper" :pagination='{"clickable": true}'>
-                    <swiper-slide v-for="(f, index) in forecast" :key="f.id" class="swiper-slide">
+                <swiper :slidesPerView="forecastMobile()" :spaceBetween="10" class="mySwiper" :pagination='{"clickable": true}'>
+                    <swiper-slide v-for="(f, index) in forecast" :key="f.id" class="">
                         <strong v-if="index == 0">Hari ini</strong>
                         <strong v-if="index == 1">Besok</strong>
                         <strong v-if="index > 1">{{ getDays(index) }}</strong>
@@ -135,7 +135,7 @@
             },
             getForecast(city) {
                 axios
-                    .get('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&lang=id&cnt=5&appid=' + this
+                    .get('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&lang=id&cnt=7&appid=' + this
                         .api_key)
                     .then(response => {
                         this.forecast = response.data.list
@@ -158,7 +158,7 @@
                 }*/
                 var d = new Date().getDay() + i
                 if (d > 6) {
-                    d = 0 - 1
+                    d =  i-4
                     return this.days[d]
                 } else {
                     return this.days[d]
@@ -170,9 +170,9 @@
             },
             forecastMobile() {
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                    return 4
+                    return 3
                 } else {
-                    return 7
+                    return 4
                 }
             },
             toInt(x) {
@@ -228,6 +228,18 @@
                 .finally(() => {
                     this.load_anim = false
                 })
+        },
+        setup() {
+            const onSwiper = (swiper) => {
+                console.log(swiper);
+            };
+            const onSlideChange = () => {
+                console.log("slide change");
+            };
+            return {
+                onSwiper,
+                onSlideChange,
+            };
         },
     }
 </script>
