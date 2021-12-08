@@ -7,7 +7,7 @@ import NotFound from '../components/404.vue'
 var x = 'test'
 
 const routes = [{
-        path: '/',
+        path: process.cwd(),
         component: Weather
     },
 
