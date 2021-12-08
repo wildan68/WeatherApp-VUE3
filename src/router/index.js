@@ -16,7 +16,7 @@ const routes = [{
     },
 
     {
-        path: process.cwd() + '/:catchAll(.*)',
+        path: '/:catchAll(.*)',
         component: NotFound
     }
 ]
