@@ -22,6 +22,6 @@ Simple Weather & Forecast App City ⛅<br>
 
 **Live Demo 🏷**
 <br>
-<a href="http://bit.ly/WldnWeatherApp">**Click Me!**</a>
+<a href="https://wldnweatherapp.netlify.app/">**Click Me!**</a>
 
 
